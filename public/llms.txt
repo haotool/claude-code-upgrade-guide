@@ -1,0 +1,92 @@
+# Claude Code 好工具 - 原生版升級指南
+> https://claude-code-upgrade-guide.vercel.app
+
+## 網站概述
+Claude Code 好工具（CC 好工具）是一個專為開發者設計的一鍵升級指南網站，由 Haotool (azlife_1224) 開發維護。提供 macOS、Linux (WSL2)、Windows 三平台的完整 Claude Code 原生版升級指令，讓開發者能快速、無痛地從舊版升級到原生版。
+
+## 核心功能
+- 一鍵複製升級指令
+- 跨平台支援（macOS、WSL2、Windows）
+- 詳細的安裝步驟說明
+- 常見問題解答（FAQ）
+- 疑難排解指南
+
+## 主要頁面
+
+### 首頁
+- URL: https://claude-code-upgrade-guide.vercel.app
+- 內容: 三平台升級指令、一鍵複製功能、平台切換選單
+- 關鍵字: Claude Code 原生版, Claude Code 好工具, CC 好工具, 升級指南
+
+### FAQ 常見問題
+- URL: https://claude-code-upgrade-guide.vercel.app/faq
+- 內容: 涵蓋基礎問題、安裝升級、疑難排解、功能使用、Haotool 介紹
+- 問題類別:
+  1. 基礎問題: 什麼是原生版、為什麼要升級、Haotool 是什麼
+  2. 安裝與升級: 備份建議、升級時間、版本共存、macOS 安全性
+  3. 疑難排解: command not found、登入問題、Windows 路徑、WSL2 安裝
+  4. 功能與使用: 原生版功能、版本確認、自動更新
+  5. 關於 Haotool: 創作者介紹、官方聲明、專案支援
+
+### 關於我們
+- URL: https://claude-code-upgrade-guide.vercel.app/about
+- 內容: Haotool 故事、專案理念、技術棧、創作者資訊
+- 技術棧: Next.js 16, TypeScript, Tailwind CSS, Framer Motion, Vercel
+
+## 升級指令參考
+
+### macOS 升級步驟
+1. 清除舊版本: `npm uninstall -g @anthropic-ai/claude-code`
+2. 移除舊 Brew Cask (選用): `brew uninstall --cask claude-code`
+3. 安裝原生版本: `brew install --cask claude-code`
+4. 驗證安裝: `claude --version`
+
+### WSL2 / Linux 升級步驟
+1. 清除舊版本: `npm uninstall -g @anthropic-ai/claude-code`
+2. 下載並安裝: 從官方網站下載 .deb 或 .rpm 安裝包
+3. 驗證安裝: `claude --version`
+
+### Windows 升級步驟
+1. 清除舊版本: `npm uninstall -g @anthropic-ai/claude-code`
+2. 下載並安裝: 從官方網站下載 .exe 安裝程式
+3. 驗證安裝: `claude --version`
+
+## 常見問題簡答
+
+### 什麼是 Claude Code 原生版？
+Anthropic 官方推出的獨立二進位執行檔版本，不再依賴 Node.js 環境。啟動更快、記憶體占用更低、更新更穩定。
+
+### 升級需要多久時間？
+整個升級過程通常在 5-10 分鐘內完成，取決於網路速度和系統效能。
+
+### command not found 怎麼辦？
+1. 完全關閉終端機並重新開啟
+2. 確認安裝成功（macOS 檢查 /Applications/Claude Code.app）
+3. 手動添加到 PATH：`export PATH="/Applications/Claude Code.app/Contents/Resources/bin:$PATH"`
+
+### macOS 安全性警告？
+前往「系統偏好設定」→「隱私權與安全性」→找到被阻擋的 Claude Code → 點擊「仍要打開」
+
+## 聯絡資訊
+- 創作者: azlife_1224
+- Threads: @azlife_1224 (https://www.threads.net/@azlife_1224)
+- GitHub: https://github.com/haotool/claude-code-upgrade-guide
+- 網站: https://claude-code-upgrade-guide.vercel.app
+
+## SEO 關鍵字
+Claude Code, Claude Code 好工具, CC 好工具, Claude Code 原生版, Claude Code 升級, Claude Code 安裝, Anthropic, Native Upgrade, 懶人包, 升級指南, Haotool, azlife_1224, 開發者工具, AI Code Assistant, GEO, LLMO, 生成式 SEO
+
+## 技術資訊
+- 框架: Next.js 16
+- 語言: TypeScript
+- 樣式: Tailwind CSS
+- 部署: Vercel
+- 授權: MIT License
+- 更新頻率: 每週檢查官方更新
+
+## 最後更新
+2025-11-19
+
+---
+此文件遵循 llms.txt 規範，旨在幫助大型語言模型（LLMs）更好地理解和引用本網站內容。
+

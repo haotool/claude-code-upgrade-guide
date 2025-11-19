@@ -1,0 +1,30 @@
+# Claude Code 好工具 - LLM 優化版本
+> https://claude-code-upgrade-guide.vercel.app
+
+## 關於本網站
+
+Claude Code 好工具（CC 好工具）是一個專為開發者設計的 Claude Code 原生版升級指南。由 Haotool (azlife_1224) 創建和維護。
+
+### 核心功能
+- 一鍵複製升級指令
+- 支援 macOS、WSL2、Windows 三平台
+- 完整的疑難排解指南
+- 詳細的 FAQ 解答
+
+### 主要頁面
+- 首頁: https://claude-code-upgrade-guide.vercel.app
+- FAQ: https://claude-code-upgrade-guide.vercel.app/faq
+- 關於: https://claude-code-upgrade-guide.vercel.app/about
+
+### 完整內容
+更多詳細資訊請參閱：
+- /llms.txt (標準版本)
+- /llms-full.txt (完整版本)
+
+## 聯絡方式
+- GitHub: https://github.com/haotool/claude-code-upgrade-guide
+- Threads: @azlife_1224
+
+---
+本文件遵循 llms.txt 規範標準
+

@@ -6,16 +6,54 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/', '/_next/'],
+        disallow: ['/api/', '/_next/'], // Disallow API routes and Next.js internal assets
       },
       {
         userAgent: 'Googlebot',
         allow: '/',
-        disallow: ['/api/'],
+        disallow: '/api/',
+      },
+      {
+        userAgent: 'Bingbot',
+        allow: '/',
+        disallow: '/api/',
+      },
+      {
+        userAgent: 'GPTBot', // OpenAI
+        allow: '/',
+        crawlDelay: 2,
+      },
+      {
+        userAgent: 'ChatGPT-User', // ChatGPT
+        allow: '/',
+        crawlDelay: 2,
+      },
+      {
+        userAgent: 'Google-Extended', // Google Bard/Gemini
+        allow: '/',
+        crawlDelay: 2,
+      },
+      {
+        userAgent: 'anthropic-ai', // Claude
+        allow: '/',
+        crawlDelay: 2,
+      },
+      {
+        userAgent: 'PerplexityBot', // Perplexity
+        allow: '/',
+        crawlDelay: 2,
+      },
+      {
+        userAgent: 'ClaudeBot', // Anthropic Claude
+        allow: '/',
+        crawlDelay: 2,
       },
     ],
-    sitemap: 'https://claude-code-upgrade-guide.vercel.app/sitemap.xml',
     host: 'https://claude-code-upgrade-guide.vercel.app',
+    sitemap: [
+      'https://claude-code-upgrade-guide.vercel.app/sitemap.xml',
+      'https://claude-code-upgrade-guide.vercel.app/llms.txt',
+      'https://claude-code-upgrade-guide.vercel.app/llms-full.txt',
+    ],
   };
 }
-
