@@ -1,4 +1,5 @@
 {
   "name": "Claude Code Native Upgrade",
-  "description": "A premium, mobile-first guide to upgrading Claude Code to the standalone native version."
+  "description": "A premium, mobile-first guide to upgrading Claude Code to the standalone native version.",
+  "requestFramePermissions": []
 }

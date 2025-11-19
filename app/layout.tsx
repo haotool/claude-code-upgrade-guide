@@ -1,4 +1,5 @@
-import type { Metadata } from "next";
+
+import type { Metadata, Viewport } from "next";
 import { Outfit, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -6,22 +7,51 @@ const outfit = Outfit({
   subsets: ["latin"],
   variable: "--font-outfit",
   weight: ["300", "400", "500", "600", "700"],
+  display: "swap", // Lighthouse: Ensure text remains visible during webfont load
 });
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-jetbrains-mono",
   weight: ["400", "500", "600"],
+  display: "swap",
 });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5, // Accessibility: Allow users to zoom
+  themeColor: "#0f0f0f",
+};
+
 export const metadata: Metadata = {
-  title: "Claude Code Upgrade Guide | Native Version Lazy Pack",
-  description: "Simple, mobile-first guide to upgrade Claude Code to the native standalone version. No dependencies required. Super lazy pack for developers.",
-  keywords: ["Claude Code", "Anthropic", "Native Upgrade", "Lazy Pack", "Developer Tools", "懶人包", "升級指南"],
+  title: "Claude Code 原生版升級懶人包 | Haotool 出品",
+  description: "專為開發者設計的 Claude Code 原生版升級指南。一鍵複製指令，無痛解除舊版依賴，快速安裝 macOS, Linux, Windows 原生版本。",
+  keywords: ["Claude Code", "Anthropic", "Native Upgrade", "Lazy Pack", "Developer Tools", "懶人包", "升級指南", "Haotool", "Claude Code 好工具", "Next.js Template"],
+  authors: [{ name: "azlife_1224" }],
   openGraph: {
     title: "Claude Code 原生版升級懶人包",
     description: "一鍵複製指令，無痛升級至原生版 Claude Code。支援 macOS, Linux, Windows。",
+    url: "https://claude-code-upgrade.vercel.app",
+    siteName: "Claude Code Upgrade Guide",
+    locale: "zh_TW",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Claude Code 原生版升級懶人包 | Haotool 出品",
+    description: "開發者必備：Claude Code 無 Node.js 依賴版本快速安裝指南。",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 
@@ -33,10 +63,10 @@ export default function RootLayout({
   return (
     <html lang="zh-TW" className="dark">
       <body
-        className={`${outfit.variable} ${jetbrainsMono.variable} antialiased bg-claude-bg text-claude-text selection:bg-claude-accent/30 selection:text-white min-h-screen overflow-x-hidden`}
+        className={`${outfit.variable} ${jetbrainsMono.variable} antialiased bg-claude-bg text-claude-text selection:bg-claude-accent/30 selection:text-white min-h-screen overflow-x-hidden flex flex-col`}
       >
         {/* Ambient Background Effects (Global) */}
-        <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
+        <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden" aria-hidden="true">
           <div className="absolute top-[-20%] left-[-10%] w-[500px] h-[500px] bg-claude-accent/10 rounded-full blur-[120px] animate-pulse-slow" />
           <div className="absolute bottom-[-20%] right-[-10%] w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-[150px] animate-pulse-slow" style={{ animationDelay: '2s' }} />
         </div>

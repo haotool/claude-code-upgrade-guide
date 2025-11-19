@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState } from 'react';
@@ -32,7 +33,7 @@ export const CodeCard: React.FC<CodeCardProps> = ({ label, command, description,
       className="group relative w-full rounded-3xl bg-claude-card/60 border border-claude-border/50 hover:border-claude-accent/30 backdrop-blur-md p-5 overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_-10px_rgba(217,119,87,0.15)]"
     >
       {/* Decoration Line */}
-      <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-claude-accent/20 to-transparent opacity-50 group-hover:opacity-100 transition-opacity" />
+      <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-claude-accent/20 to-transparent opacity-50 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
 
       <div className="flex flex-col gap-3">
         <div className="flex items-center justify-between">
@@ -50,17 +51,26 @@ export const CodeCard: React.FC<CodeCardProps> = ({ label, command, description,
         <div 
           onClick={handleCopy}
           className="relative flex items-center bg-black/40 rounded-xl border border-claude-border/30 p-4 cursor-pointer group/code hover:bg-black/60 transition-colors"
+          role="button"
+          aria-label={`Copy command: ${command}`}
+          tabIndex={0}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              handleCopy();
+            }
+          }}
         >
           <code className="flex-1 font-mono text-sm sm:text-base text-claude-accent break-all pr-8 selection:bg-claude-accent/20">
-             <span className="text-claude-muted mr-2 select-none">$</span>{command}
+             <span className="text-claude-muted mr-2 select-none" aria-hidden="true">$</span>{command}
           </code>
           
           <div className="absolute right-3 top-1/2 -translate-y-1/2">
             <button 
               className={`p-2 rounded-lg transition-all duration-200 ${copied ? 'bg-green-500/20 text-green-400' : 'bg-claude-bg text-claude-muted hover:text-white hover:bg-claude-border'}`}
-              aria-label="Copy command"
+              aria-label={copied ? "Copied successfully" : "Copy command to clipboard"}
             >
-              {copied ? <Check size={16} /> : <Copy size={16} />}
+              {copied ? <Check size={16} aria-hidden="true" /> : <Copy size={16} aria-hidden="true" />}
             </button>
           </div>
         </div>

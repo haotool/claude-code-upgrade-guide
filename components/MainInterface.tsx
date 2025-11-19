@@ -1,11 +1,13 @@
+
 'use client';
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Terminal, Command, Monitor, Sparkles, ExternalLink, Globe } from 'lucide-react';
+import { Terminal, Command, Monitor, Sparkles, Globe } from 'lucide-react';
 import { PLATFORM_DATA, UI_TEXT } from '@/lib/constants';
 import { PlatformID, Language } from '@/lib/types';
 import { CodeCard } from '@/components/CodeCard';
+import { CustomFooter } from '@/components/CustomFooter';
 
 const MainInterface: React.FC = () => {
   const [activeTab, setActiveTab] = useState<PlatformID>(PlatformID.MACOS);
@@ -17,20 +19,21 @@ const MainInterface: React.FC = () => {
   const getIcon = (iconName: string, active: boolean) => {
     const className = `w-5 h-5 transition-colors duration-300 ${active ? 'text-claude-accent' : 'text-claude-muted'}`;
     switch (iconName) {
-      case 'Apple': return <Command className={className} />;
-      case 'Terminal': return <Terminal className={className} />;
-      case 'Monitor': return <Monitor className={className} />;
-      default: return <Terminal className={className} />;
+      case 'Apple': return <Command className={className} aria-hidden="true" />;
+      case 'Terminal': return <Terminal className={className} aria-hidden="true" />;
+      case 'Monitor': return <Monitor className={className} aria-hidden="true" />;
+      default: return <Terminal className={className} aria-hidden="true" />;
     }
   };
 
   return (
-    <div className="relative z-10 max-w-3xl mx-auto px-6 py-12 sm:py-20 flex flex-col items-center gap-8">
+    <div className="relative z-10 w-full max-w-3xl mx-auto px-6 pt-12 sm:pt-20 flex flex-col items-center gap-8 min-h-[calc(100vh-4rem)]">
        {/* Language Toggle - Fixed Top Right */}
        <div className="fixed top-4 right-4 z-50">
         <button 
           onClick={() => setLang(prev => prev === 'en' ? 'zh' : 'en')}
           className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-claude-card/80 backdrop-blur-md border border-claude-border/60 hover:border-claude-accent/50 transition-all duration-300 shadow-lg group"
+          aria-label="Switch Language"
         >
           <Globe size={14} className="text-claude-muted group-hover:text-claude-accent transition-colors" />
           <span className="text-xs font-medium text-claude-muted group-hover:text-white transition-colors w-[44px] text-center">
@@ -40,31 +43,33 @@ const MainInterface: React.FC = () => {
       </div>
 
       {/* Header Section */}
-      <motion.div 
-        initial={{ opacity: 0, y: -30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className="text-center space-y-5 w-full"
-      >
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-claude-card border border-claude-border/60 shadow-sm mb-2">
-          <Sparkles size={14} className="text-claude-accent animate-pulse" />
-          <span className="text-xs font-medium tracking-wide text-claude-muted uppercase">
-            {UI_TEXT.badge[lang]}
-          </span>
-        </div>
-        
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-white to-white/60">
-          {UI_TEXT.title[lang]}
-          <br />
-          <span className="font-serif italic text-claude-accent opacity-90 text-4xl sm:text-5xl md:text-7xl pt-2 block">
-            {UI_TEXT.subtitle[lang]}
-          </span>
-        </h1>
-        
-        <p className={`text-claude-muted text-sm sm:text-base max-w-md mx-auto leading-relaxed ${lang === 'zh' ? 'tracking-wide' : ''}`}>
-          {UI_TEXT.description[lang]}
-        </p>
-      </motion.div>
+      <header className="text-center space-y-5 w-full">
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="flex flex-col items-center"
+        >
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-claude-card border border-claude-border/60 shadow-sm mb-4">
+            <Sparkles size={14} className="text-claude-accent animate-pulse" />
+            <span className="text-xs font-medium tracking-wide text-claude-muted uppercase">
+              {UI_TEXT.badge[lang]}
+            </span>
+          </div>
+          
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-white to-white/60">
+            {UI_TEXT.title[lang]}
+            <br />
+            <span className="font-serif italic text-claude-accent opacity-90 text-4xl sm:text-5xl md:text-7xl pt-2 block">
+              {UI_TEXT.subtitle[lang]}
+            </span>
+          </h1>
+          
+          <p className={`mt-6 text-claude-muted text-sm sm:text-base max-w-md mx-auto leading-relaxed ${lang === 'zh' ? 'tracking-wide' : ''}`}>
+            {UI_TEXT.description[lang]}
+          </p>
+        </motion.div>
+      </header>
 
       {/* Platform Selector - Mobile First Design */}
       <motion.div 
@@ -73,12 +78,14 @@ const MainInterface: React.FC = () => {
         transition={{ duration: 0.5, delay: 0.2 }}
         className="w-full max-w-md"
       >
-        <div className="grid grid-cols-3 gap-2 p-1.5 bg-claude-card/80 backdrop-blur-md border border-claude-border rounded-2xl shadow-lg">
+        <div className="grid grid-cols-3 gap-2 p-1.5 bg-claude-card/80 backdrop-blur-md border border-claude-border rounded-2xl shadow-lg" role="tablist">
           {PLATFORM_DATA.map((platform) => {
             const isActive = activeTab === platform.id;
             return (
               <button
                 key={platform.id}
+                role="tab"
+                aria-selected={isActive}
                 onClick={() => setActiveTab(platform.id)}
                 className={`relative flex flex-col sm:flex-row items-center justify-center gap-2 py-3 sm:py-3 px-2 rounded-xl transition-all duration-300 ${isActive ? 'text-white' : 'text-claude-muted hover:text-white/80'}`}
               >
@@ -100,7 +107,7 @@ const MainInterface: React.FC = () => {
       </motion.div>
 
       {/* Content Area */}
-      <div className="w-full space-y-6 min-h-[400px]">
+      <main className="w-full space-y-6 flex-grow">
         <AnimatePresence mode='wait'>
           <motion.div
             key={`${activeTab}-${lang}`}
@@ -112,7 +119,7 @@ const MainInterface: React.FC = () => {
           >
             <div className="flex items-center justify-between px-2">
               <h2 className="text-lg font-medium text-white/90 flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-claude-accent shadow-[0_0_10px_rgba(217,119,87,0.8)]"></span>
+                <span className="w-1.5 h-1.5 rounded-full bg-claude-accent shadow-[0_0_10px_rgba(217,119,87,0.8)]" aria-hidden="true"></span>
                 {UI_TEXT.forPlatform[lang]} {activeData?.name}
               </h2>
               <span className="text-xs text-claude-muted bg-claude-card px-2 py-1 rounded border border-claude-border/50">
@@ -131,28 +138,9 @@ const MainInterface: React.FC = () => {
             ))}
           </motion.div>
         </AnimatePresence>
-      </div>
+      </main>
 
-      {/* Footer */}
-      <motion.footer 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.8 }}
-        className="pt-10 pb-6 text-center"
-      >
-        <a 
-          href="https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-xs text-claude-muted hover:text-claude-accent transition-colors duration-300 group"
-        >
-          <span>{UI_TEXT.footerDoc[lang]}</span>
-          <ExternalLink size={10} className="group-hover:-translate-y-0.5 transition-transform" />
-        </a>
-        <p className="mt-4 text-[10px] text-zinc-700">
-          {UI_TEXT.footerDisclaim[lang]}
-        </p>
-      </motion.footer>
+      <CustomFooter />
     </div>
   );
 };
