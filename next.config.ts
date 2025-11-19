@@ -17,8 +17,6 @@ const nextConfig: NextConfig = {
     optimizePackageImports: ["lucide-react"],
     optimizeCss: true, // Enable CSS optimization
   },
-  // Reduce JavaScript bundle size
-  swcMinify: true,
   // Headers for better performance and security
   async headers() {
     return [
