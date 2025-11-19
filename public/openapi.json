@@ -1,0 +1,143 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Claude Code 好工具 API",
+    "description": "Upgrade guide API for Claude Code native version migration",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Haotool",
+      "url": "https://claude-code-upgrade-guide.vercel.app",
+      "email": "haotool.org@gmail.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://claude-code-upgrade-guide.vercel.app",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "summary": "Get upgrade instructions",
+        "description": "Returns the main page with platform-specific upgrade commands",
+        "operationId": "getUpgradeInstructions",
+        "responses": {
+          "200": {
+            "description": "Upgrade instructions page",
+            "content": {
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/faq": {
+      "get": {
+        "summary": "Get FAQ",
+        "description": "Returns 26 frequently asked questions about Claude Code upgrade",
+        "operationId": "getFAQ",
+        "responses": {
+          "200": {
+            "description": "FAQ page with 26 Q&A entries",
+            "content": {
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/about": {
+      "get": {
+        "summary": "Get about information",
+        "description": "Returns information about Haotool and the project",
+        "operationId": "getAbout",
+        "responses": {
+          "200": {
+            "description": "About page with project details",
+            "content": {
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sitemap.xml": {
+      "get": {
+        "summary": "Get sitemap",
+        "description": "Returns XML sitemap for search engines",
+        "operationId": "getSitemap",
+        "responses": {
+          "200": {
+            "description": "XML sitemap",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/robots.txt": {
+      "get": {
+        "summary": "Get robots.txt",
+        "description": "Returns robots.txt for web crawlers",
+        "operationId": "getRobots",
+        "responses": {
+          "200": {
+            "description": "robots.txt content",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Platform": {
+        "type": "string",
+        "enum": ["macOS", "WSL2", "Windows"],
+        "description": "Supported operating system platforms"
+      },
+      "Command": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "Command description"
+          },
+          "command": {
+            "type": "string",
+            "description": "Terminal command to execute"
+          },
+          "explanation": {
+            "type": "string",
+            "description": "Detailed explanation of the command"
+          }
+        }
+      }
+    }
+  }
+}
+

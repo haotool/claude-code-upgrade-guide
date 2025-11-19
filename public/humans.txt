@@ -1,0 +1,24 @@
+/* TEAM */
+Creator: azlife_1224
+Site: https://www.threads.net/@azlife_1224
+Location: Taiwan
+
+/* THANKS */
+Claude Code by Anthropic
+Next.js Team
+Vercel Platform
+Open Source Community
+
+/* SITE */
+Last update: 2024/11/20
+Language: 繁體中文 / English
+Doctype: HTML5
+IDE: Cursor, Claude Code
+Standards: HTML5, CSS3, ES2024
+Components: React, Next.js 16, TypeScript, Tailwind CSS
+Software: Framer Motion, Lucide Icons
+
+/* PURPOSE */
+Make complex technology simple and accessible
+Help developers upgrade Claude Code effortlessly
+Build useful tools for the developer community

@@ -103,13 +103,27 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh-TW" className="dark">
+      <head>
+        {/* Preconnect to external domains for faster resource loading */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* DNS prefetch for future navigation */}
+        <link rel="dns-prefetch" href="https://www.threads.net" />
+        <link rel="dns-prefetch" href="https://github.com" />
+      </head>
       <body
-      className={`${outfit.variable} ${jetbrainsMono.variable} antialiased`}
-    >
-      <WebsiteSchema />
-      <OrganizationSchema />
-      {children}
-    </body>
+        className={`${outfit.variable} ${jetbrainsMono.variable} antialiased`}
+        role="document"
+      >
+        <WebsiteSchema />
+        <OrganizationSchema />
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-claude-accent focus:text-white">
+          跳至主要內容
+        </a>
+        <main id="main-content" role="main">
+          {children}
+        </main>
+      </body>
     </html>
   );
 }

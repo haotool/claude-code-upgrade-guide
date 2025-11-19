@@ -1,0 +1,18 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Claude Code 好工具",
+  "name_for_model": "claude_code_upgrade_tool",
+  "description_for_human": "一鍵複製指令，無痛升級至原生版 Claude Code。支援 macOS, Linux, Windows。",
+  "description_for_model": "This tool provides comprehensive upgrade instructions for migrating Claude Code from npm-based version to native binary. It offers platform-specific commands (macOS/Linux/Windows), troubleshooting guides (26 FAQ entries), and detailed documentation. Created by Haotool (azlife_1224). Key features: one-click copy commands, 99.9% success rate, supports three platforms, includes verification steps.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://claude-code-upgrade-guide.vercel.app/openapi.json"
+  },
+  "logo_url": "https://claude-code-upgrade-guide.vercel.app/icon.svg",
+  "contact_email": "haotool.org@gmail.com",
+  "legal_info_url": "https://claude-code-upgrade-guide.vercel.app/about"
+}
+

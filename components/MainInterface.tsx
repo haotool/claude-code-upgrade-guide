@@ -60,7 +60,7 @@ const MainInterface: React.FC = () => {
       <div className="relative z-10 max-w-3xl mx-auto px-6 py-12 sm:py-20 flex flex-col items-center gap-8 flex-1">
         
         {/* Header Section */}
-        <header className="text-center space-y-5 w-full">
+        <header className="text-center space-y-5 w-full" role="banner">
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -68,7 +68,7 @@ const MainInterface: React.FC = () => {
           className="flex flex-col items-center"
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-claude-card border border-claude-border/60 shadow-sm mb-4">
-            <Sparkles size={14} className="text-claude-accent animate-pulse" />
+            <Sparkles size={14} className="text-claude-accent animate-pulse" aria-hidden="true" />
             <span className="text-xs font-medium tracking-wide text-claude-muted uppercase">
               {UI_TEXT.badge[lang]}
             </span>
@@ -95,7 +95,7 @@ const MainInterface: React.FC = () => {
         transition={{ duration: 0.5, delay: 0.2 }}
         className="w-full max-w-md"
       >
-        <div className="grid grid-cols-3 gap-2 p-1.5 bg-claude-card/80 backdrop-blur-md border border-claude-border rounded-2xl shadow-lg" role="tablist">
+        <div className="grid grid-cols-3 gap-2 p-1.5 bg-claude-card/80 backdrop-blur-md border border-claude-border rounded-2xl shadow-lg" role="tablist" aria-label="選擇作業系統平台">
           {PLATFORM_DATA.map((platform) => {
             const isActive = activeTab === platform.id;
             return (
@@ -103,6 +103,7 @@ const MainInterface: React.FC = () => {
                 key={platform.id}
                 role="tab"
                 aria-selected={isActive}
+                aria-label={`${platform.name} 平台升級指令`}
                 onClick={() => setActiveTab(platform.id)}
                 className={`relative flex flex-col sm:flex-row items-center justify-center gap-2 py-3 sm:py-3 px-2 rounded-xl transition-all duration-300 ${isActive ? 'text-white' : 'text-claude-muted hover:text-white/80'}`}
               >
@@ -133,6 +134,8 @@ const MainInterface: React.FC = () => {
             exit={{ opacity: 0, x: -20 }}
             transition={{ duration: 0.3 }}
             className="flex flex-col gap-4"
+            role="region"
+            aria-label={`${activeData?.name} 升級指令步驟`}
           >
             <div className="flex items-center justify-between px-2">
               <h2 className="text-lg font-medium text-white/90 flex items-center gap-2">

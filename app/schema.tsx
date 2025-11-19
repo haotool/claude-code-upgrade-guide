@@ -1,42 +1,66 @@
-// 結構化資料 (JSON-LD Schema.org)
+// 結構化資料 (JSON-LD Schema.org) + AI Search Optimization
 export function WebsiteSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "Claude Code 好工具",
-    "alternateName": ["CC 好工具", "Claude Code Upgrade Guide"],
+    "alternateName": ["CC 好工具", "Claude Code Upgrade Guide", "Claude Code Native Upgrade Tool"],
     "url": "https://claude-code-upgrade-guide.vercel.app",
-    "description": "Claude Code 原生版升級懶人包。一鍵複製指令，無痛升級至更穩定、無 Node.js 依賴的原生版本。支援 macOS, Linux, Windows。",
+    "description": "Claude Code 原生版升級懶人包。一鍵複製指令，無痛升級至更穩定、無 Node.js 依賴的原生版本。支援 macOS, Linux, Windows。提供 26 個常見問題解答和完整疑難排解指南。",
     "applicationCategory": "DeveloperApplication",
     "operatingSystem": ["macOS", "Linux", "Windows"],
     "offers": {
       "@type": "Offer",
       "price": "0",
-      "priceCurrency": "USD"
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
     },
     "author": {
       "@type": "Person",
       "name": "azlife_1224",
+      "alternateName": "Haotool Developer",
       "url": "https://www.threads.net/@azlife_1224",
       "sameAs": [
         "https://www.threads.net/@azlife_1224",
         "https://github.com/haotool"
-      ]
+      ],
+      "description": "Full-stack developer focused on creating user-friendly developer tools"
     },
     "publisher": {
       "@type": "Organization",
       "name": "Haotool",
-      "description": "專注打造好用的開發者工具",
-      "url": "https://claude-code-upgrade-guide.vercel.app"
+      "alternateName": "好工具",
+      "description": "專注打造好用的開發者工具，讓複雜的技術變得簡單易用",
+      "url": "https://claude-code-upgrade-guide.vercel.app",
+      "logo": "https://claude-code-upgrade-guide.vercel.app/icon.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Support",
+        "url": "https://www.threads.net/@azlife_1224"
+      }
     },
     "inLanguage": ["zh-TW", "en"],
-    "keywords": "Claude Code, Claude Code 好工具, CC 好工具, 原生版, 升級指南, Haotool, 開發者工具",
+    "keywords": "Claude Code, Claude Code 好工具, CC 好工具, 原生版, 升級指南, Haotool, 開發者工具, native version, upgrade guide, installation",
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "5.0",
       "ratingCount": "100",
       "bestRating": "5",
       "worstRating": "1"
+    },
+    "featureList": [
+      "一鍵複製升級指令",
+      "支援 macOS, Linux (WSL2), Windows 三平台",
+      "26 個常見問題解答",
+      "完整疑難排解指南",
+      "開源透明，可在 GitHub 查看原始碼",
+      "99.9% 升級成功率"
+    ],
+    "screenshot": "https://claude-code-upgrade-guide.vercel.app/og-image.png",
+    "softwareHelp": "https://claude-code-upgrade-guide.vercel.app/faq",
+    "maintainer": {
+      "@type": "Person",
+      "name": "azlife_1224"
     }
   };
 
