@@ -25,10 +25,20 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://claude-code-upgrade.vercel.app'),
   title: "Claude Code 原生版升級懶人包 | Haotool 出品",
   description: "專為開發者設計的 Claude Code 原生版升級指南。一鍵複製指令，無痛解除舊版依賴，快速安裝 macOS, Linux, Windows 原生版本。",
   keywords: ["Claude Code", "Anthropic", "Native Upgrade", "Lazy Pack", "Developer Tools", "懶人包", "升級指南", "Haotool", "Claude Code 好工具", "Next.js Template"],
   authors: [{ name: "azlife_1224" }],
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/icon.svg', type: 'image/svg+xml', sizes: '512x512' }
+    ],
+    apple: [
+      { url: '/icon.svg', sizes: '180x180', type: 'image/svg+xml' }
+    ],
+  },
   openGraph: {
     title: "Claude Code 原生版升級懶人包",
     description: "一鍵複製指令，無痛升級至原生版 Claude Code。支援 macOS, Linux, Windows。",
@@ -63,14 +73,8 @@ export default function RootLayout({
   return (
     <html lang="zh-TW" className="dark">
       <body
-        className={`${outfit.variable} ${jetbrainsMono.variable} antialiased bg-claude-bg text-claude-text selection:bg-claude-accent/30 selection:text-white min-h-screen overflow-x-hidden flex flex-col`}
+        className={`${outfit.variable} ${jetbrainsMono.variable} antialiased`}
       >
-        {/* Ambient Background Effects (Global) */}
-        <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden" aria-hidden="true">
-          <div className="absolute top-[-20%] left-[-10%] w-[500px] h-[500px] bg-claude-accent/10 rounded-full blur-[120px] animate-pulse-slow" />
-          <div className="absolute bottom-[-20%] right-[-10%] w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-[150px] animate-pulse-slow" style={{ animationDelay: '2s' }} />
-        </div>
-        
         {children}
       </body>
     </html>

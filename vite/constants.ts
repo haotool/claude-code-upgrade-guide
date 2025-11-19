@@ -1,3 +1,4 @@
+
 import { PlatformID, PlatformData, UiTranslation } from './types';
 
 export const UI_TEXT: UiTranslation = {
@@ -32,14 +33,6 @@ export const UI_TEXT: UiTranslation = {
   forPlatform: {
     en: "For",
     zh: "適用於"
-  },
-  copyAllCommands: {
-    en: "Copy All Commands",
-    zh: "複製全部指令"
-  },
-  copiedAll: {
-    en: "All Copied",
-    zh: "已複製全部"
   }
 };
 

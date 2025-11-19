@@ -1,3 +1,4 @@
+
 export enum PlatformID {
   MACOS = 'macos',
   LINUX = 'linux',
@@ -34,6 +35,4 @@ export interface UiTranslation {
   footerDisclaim: LocalizedString;
   stepCount: LocalizedString;
   forPlatform: LocalizedString;
-  copyAllCommands: LocalizedString;
-  copiedAll: LocalizedString;
 }

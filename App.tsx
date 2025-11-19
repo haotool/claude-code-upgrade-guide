@@ -1,1 +1,0 @@
-// This file is deprecated. Please delete it and use components/MainInterface.tsx instead.

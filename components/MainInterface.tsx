@@ -3,7 +3,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Terminal, Command, Monitor, Sparkles, Globe } from 'lucide-react';
+import { Terminal, Command, Monitor, Sparkles, Globe, Copy, Check } from 'lucide-react';
 import { PLATFORM_DATA, UI_TEXT } from '@/lib/constants';
 import { PlatformID, Language } from '@/lib/types';
 import { CodeCard } from '@/components/CodeCard';
@@ -12,8 +12,23 @@ import { CustomFooter } from '@/components/CustomFooter';
 const MainInterface: React.FC = () => {
   const [activeTab, setActiveTab] = useState<PlatformID>(PlatformID.MACOS);
   const [lang, setLang] = useState<Language>('zh'); // Default to Chinese
+  const [copiedAll, setCopiedAll] = useState(false);
 
   const activeData = PLATFORM_DATA.find(p => p.id === activeTab);
+
+  const handleCopyAll = async () => {
+    if (!activeData) return;
+    
+    const allCommands = activeData.steps.map(step => step.command).join('\n');
+    
+    try {
+      await navigator.clipboard.writeText(allCommands);
+      setCopiedAll(true);
+      setTimeout(() => setCopiedAll(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy:', err);
+    }
+  };
 
   // Icon mapping
   const getIcon = (iconName: string, active: boolean) => {
@@ -27,9 +42,9 @@ const MainInterface: React.FC = () => {
   };
 
   return (
-    <div className="relative z-10 w-full max-w-3xl mx-auto px-6 pt-12 sm:pt-20 flex flex-col items-center gap-8 min-h-[calc(100vh-4rem)]">
-       {/* Language Toggle - Fixed Top Right */}
-       <div className="fixed top-4 right-4 z-50">
+    <div className="min-h-screen w-full bg-claude-bg text-claude-text selection:bg-claude-accent/30 selection:text-white overflow-x-hidden font-sans flex flex-col">
+      {/* Language Toggle - Fixed Top Right */}
+      <div className="fixed top-4 right-4 z-50">
         <button 
           onClick={() => setLang(prev => prev === 'en' ? 'zh' : 'en')}
           className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-claude-card/80 backdrop-blur-md border border-claude-border/60 hover:border-claude-accent/50 transition-all duration-300 shadow-lg group"
@@ -42,8 +57,10 @@ const MainInterface: React.FC = () => {
         </button>
       </div>
 
-      {/* Header Section */}
-      <header className="text-center space-y-5 w-full">
+      <div className="relative z-10 max-w-3xl mx-auto px-6 py-12 sm:py-20 flex flex-col items-center gap-8 flex-1">
+        
+        {/* Header Section */}
+        <header className="text-center space-y-5 w-full">
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -107,7 +124,7 @@ const MainInterface: React.FC = () => {
       </motion.div>
 
       {/* Content Area */}
-      <main className="w-full space-y-6 flex-grow">
+      <div className="w-full space-y-6 min-h-[400px]">
         <AnimatePresence mode='wait'>
           <motion.div
             key={`${activeTab}-${lang}`}
@@ -136,11 +153,40 @@ const MainInterface: React.FC = () => {
                 description={step.description?.[lang]}
               />
             ))}
+
+            {/* Elegant Copy All Button */}
+            <motion.button
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: 0.4 }}
+              onClick={handleCopyAll}
+              className="relative w-full mt-6 group overflow-hidden rounded-2xl bg-claude-card/40 hover:bg-claude-card/60 border border-claude-border/40 hover:border-claude-accent/40 backdrop-blur-sm transition-all duration-300"
+            >
+              <div className="relative flex items-center justify-center gap-2.5 px-5 py-3.5">
+                {copiedAll ? (
+                  <>
+                    <Check className="w-4 h-4 text-claude-accent" />
+                    <span className="text-sm font-medium text-claude-text">
+                      {UI_TEXT.copiedAll[lang]}
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    <Copy className="w-4 h-4 text-claude-muted group-hover:text-claude-accent transition-colors duration-300" />
+                    <span className="text-sm font-medium text-claude-muted group-hover:text-claude-text transition-colors duration-300">
+                      {UI_TEXT.copyAllCommands[lang]}
+                    </span>
+                  </>
+                )}
+              </div>
+            </motion.button>
           </motion.div>
         </AnimatePresence>
-      </main>
-
-      <CustomFooter />
+      </div>
+      </div>
+      
+      {/* Footer outside of max-w container */}
+      <CustomFooter lang={lang} />
     </div>
   );
 };

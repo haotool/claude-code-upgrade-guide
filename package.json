@@ -1,8 +1,23 @@
-
 {
-  "name": "claude-code-native-upgrade",
-  "version": "1.1.0",
-  "private": true,
+  "name": "claude-code-upgrade-guide",
+  "version": "1.0.0",
+  "description": "Claude Code Native Upgrade Guide - One-click command copy for seamless upgrade",
+  "author": "Haotool (azlife_1224)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/haotool/claude-code-upgrade-guide.git"
+  },
+  "homepage": "https://claude-code-upgrade.vercel.app",
+  "keywords": [
+    "claude-code",
+    "anthropic",
+    "upgrade-guide",
+    "developer-tools",
+    "nextjs",
+    "typescript"
+  ],
+  "private": false,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -10,20 +25,23 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "15.1.0",
-    "framer-motion": "^11.15.0",
-    "lucide-react": "^0.468.0",
+    "autoprefixer": "^10.4.22",
     "clsx": "^2.1.1",
-    "tailwind-merge": "^2.5.5"
+    "eslint": "^9.39.1",
+    "eslint-config-next": "^16.0.3",
+    "framer-motion": "^12.23.24",
+    "lucide-react": "^0.554.0",
+    "next": "^16.0.3",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "tailwind-merge": "^3.4.0",
+    "tailwindcss": "^3.4.18"
   },
   "devDependencies": {
-    "@types/node": "^20.0.0",
-    "@types/react": "^19.0.0",
-    "@types/react-dom": "^19.0.0",
-    "postcss": "^8.0.0",
-    "tailwindcss": "^3.4.0",
-    "typescript": "^5.0.0"
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.6",
+    "@types/react-dom": "^19.2.3",
+    "postcss": "^8.5.6",
+    "typescript": "^5.9.3"
   }
 }

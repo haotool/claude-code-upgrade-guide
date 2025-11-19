@@ -1,1 +1,0 @@
-// This file is deprecated. Please delete it and use app/layout.tsx and app/page.tsx instead.
