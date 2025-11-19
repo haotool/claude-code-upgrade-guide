@@ -14,9 +14,11 @@ const nextConfig: NextConfig = {
   },
   // Experimental features for better performance
   experimental: {
-    optimizePackageImports: ["lucide-react"],
+    optimizePackageImports: ["lucide-react", "framer-motion"],
     optimizeCss: true, // Enable CSS optimization
   },
+  // Modern JavaScript output (reduces legacy polyfills)
+  output: "standalone",
   // Headers for better performance and security
   async headers() {
     return [
@@ -52,6 +54,15 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/:path*.{svg,ico}",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      {
+        source: "/:path*.{css,js}",
         headers: [
           {
             key: "Cache-Control",
