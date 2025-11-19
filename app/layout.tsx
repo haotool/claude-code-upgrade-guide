@@ -1,4 +1,3 @@
-
 import type { Metadata, Viewport } from "next";
 import { Outfit, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
@@ -26,9 +25,10 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://claude-code-upgrade-guide.vercel.app'),
+  metadataBase: new URL("https://claude-code-upgrade-guide.vercel.app"),
   title: "Claude Code 原生版升級懶人包 | Haotool 出品",
-  description: "專為開發者設計的 Claude Code 原生版升級指南。一鍵複製指令，無痛解除舊版依賴，快速安裝 macOS, Linux, Windows 原生版本。",
+  description:
+    "專為開發者設計的 Claude Code 原生版升級指南。一鍵複製指令，無痛解除舊版依賴，快速安裝 macOS, Linux, Windows 原生版本。",
   keywords: [
     "Claude Code",
     "Claude Code 好工具",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     "Haotool",
     "azlife_1224",
     "開發者工具",
-    "程式設計工具"
+    "程式設計工具",
   ],
   authors: [{ name: "azlife_1224" }],
   verification: {
@@ -53,16 +53,15 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicon.svg', type: 'image/svg+xml' },
-      { url: '/icon.svg', type: 'image/svg+xml', sizes: '512x512' }
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/icon.svg", type: "image/svg+xml", sizes: "512x512" },
     ],
-    apple: [
-      { url: '/icon.svg', sizes: '180x180', type: 'image/svg+xml' }
-    ],
+    apple: [{ url: "/icon.svg", sizes: "180x180", type: "image/svg+xml" }],
   },
   openGraph: {
     title: "Claude Code 原生版升級懶人包",
-    description: "一鍵複製指令，無痛升級至原生版 Claude Code。支援 macOS, Linux, Windows。",
+    description:
+      "一鍵複製指令，無痛升級至原生版 Claude Code。支援 macOS, Linux, Windows。",
     url: "https://claude-code-upgrade-guide.vercel.app",
     siteName: "Claude Code Upgrade Guide",
     locale: "zh_TW",
@@ -89,9 +88,9 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
 };
@@ -106,7 +105,11 @@ export default function RootLayout({
       <head>
         {/* Preconnect to external domains for faster resource loading */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
         {/* DNS prefetch for future navigation */}
         <link rel="dns-prefetch" href="https://www.threads.net" />
         <link rel="dns-prefetch" href="https://github.com" />
@@ -117,7 +120,10 @@ export default function RootLayout({
       >
         <WebsiteSchema />
         <OrganizationSchema />
-        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-claude-accent focus:text-white">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-claude-accent focus:text-white"
+        >
           跳至主要內容
         </a>
         <main id="main-content" role="main">
