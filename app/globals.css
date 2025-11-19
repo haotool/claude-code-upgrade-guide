@@ -1,3 +1,29 @@
+/* Critical inline styles first */
+:root {
+  --background: #050505;
+  --foreground: #f0f0f0;
+  --claude-bg: #0f0f0f;
+  --claude-card: #1a1a1a;
+  --claude-accent: #e98765;
+  --claude-text: #f0f0f0;
+  --claude-muted: #a0a0a0;
+  --claude-border: #2a2a2a;
+}
+
+html {
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-outfit), system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -24,18 +50,6 @@
   overflow: visible;
   clip: auto;
   white-space: normal;
-}
-
-:root {
-  --background: #050505;
-  --foreground: #f0f0f0;
-}
-
-body {
-  background-color: var(--background);
-  color: var(--foreground);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Custom Scrollbar */

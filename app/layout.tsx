@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { Outfit, JetBrains_Mono } from "next/font/google";
-import "./critical.css"; // Critical CSS first for fastest FCP
 import "./globals.css";
 import { WebsiteSchema, OrganizationSchema } from "./schema";
 

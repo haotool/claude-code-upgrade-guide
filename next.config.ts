@@ -16,9 +16,13 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ["lucide-react", "framer-motion"],
     optimizeCss: true, // Enable CSS optimization
+    // Aggressive CSS optimization
+    cssChunking: 'strict',
   },
   // Modern JavaScript output (reduces legacy polyfills)
   output: "standalone",
+  // Production optimizations
+  productionBrowserSourceMaps: false,
   // Headers for better performance and security
   async headers() {
     return [
