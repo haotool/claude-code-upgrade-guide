@@ -1,5 +1,8 @@
 {
-  "name": "Claude Code Native Upgrade",
-  "description": "A premium, mobile-first guide to upgrading Claude Code to the standalone native version.",
-  "requestFramePermissions": []
+  "name": "Claude Code Upgrade Guide",
+  "description": "Claude Code Native Upgrade Guide - One-click command copy for seamless upgrade from Node.js to native version",
+  "version": "1.0.0",
+  "author": "Haotool (azlife_1224)",
+  "repository": "https://github.com/haotool/claude-code-upgrade-guide",
+  "homepage": "https://claude-code-upgrade.vercel.app"
 }

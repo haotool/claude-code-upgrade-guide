@@ -46,11 +46,21 @@ export const metadata: Metadata = {
     siteName: "Claude Code Upgrade Guide",
     locale: "zh_TW",
     type: "website",
+    images: [
+      {
+        url: "https://claude-code-upgrade.vercel.app/og-image.png",
+        width: 1536,
+        height: 1024,
+        alt: "Claude Code Native Upgrade Lazy Pack",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Claude Code 原生版升級懶人包 | Haotool 出品",
     description: "開發者必備：Claude Code 無 Node.js 依賴版本快速安裝指南。",
+    images: ["https://claude-code-upgrade.vercel.app/og-image.png"],
+    creator: "@azlife_1224",
   },
   robots: {
     index: true,
