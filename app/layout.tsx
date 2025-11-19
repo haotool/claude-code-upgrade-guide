@@ -49,8 +49,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "https://claude-code-upgrade.vercel.app/og-image.png",
-        width: 1536,
-        height: 1024,
+        width: 1200,
+        height: 630,
         alt: "Claude Code Native Upgrade Lazy Pack",
       },
     ],
