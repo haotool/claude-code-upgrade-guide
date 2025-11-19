@@ -17,7 +17,7 @@ const nextConfig: NextConfig = {
     optimizePackageImports: ["lucide-react", "framer-motion"],
     optimizeCss: true, // Enable CSS optimization
     // Aggressive CSS optimization
-    cssChunking: 'strict',
+    cssChunking: "strict",
   },
   // Modern JavaScript output (reduces legacy polyfills)
   output: "standalone",
