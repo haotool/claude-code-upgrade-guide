@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Outfit, JetBrains_Mono } from "next/font/google";
+import "./critical.css"; // Critical CSS first for fastest FCP
 import "./globals.css";
 import { WebsiteSchema, OrganizationSchema } from "./schema";
 
@@ -7,7 +8,10 @@ const outfit = Outfit({
   subsets: ["latin"],
   variable: "--font-outfit",
   weight: ["300", "400", "500", "600", "700"],
-  display: "swap", // Lighthouse: Ensure text remains visible during webfont load
+  display: "swap",
+  preload: true,
+  fallback: ["system-ui", "arial"],
+  adjustFontFallback: true,
 });
 
 const jetbrainsMono = JetBrains_Mono({
@@ -15,6 +19,9 @@ const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
   weight: ["400", "500", "600"],
   display: "swap",
+  preload: true,
+  fallback: ["monospace", "courier"],
+  adjustFontFallback: true,
 });
 
 export const viewport: Viewport = {
@@ -103,14 +110,7 @@ export default function RootLayout({
   return (
     <html lang="zh-TW" className="dark">
       <head>
-        {/* Preconnect to external domains for faster resource loading */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        {/* DNS prefetch for future navigation */}
+        {/* DNS prefetch for future navigation - only for actually used domains */}
         <link rel="dns-prefetch" href="https://www.threads.net" />
         <link rel="dns-prefetch" href="https://github.com" />
       </head>

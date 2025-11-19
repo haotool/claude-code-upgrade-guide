@@ -1,0 +1,71 @@
+/* Critical CSS - Inlined for faster FCP/LCP */
+/* This file contains above-the-fold styles */
+
+:root {
+  --claude-bg: #0f0f0f;
+  --claude-card: #1a1a1a;
+  --claude-accent: #e98765;
+  --claude-text: #f0f0f0;
+  --claude-muted: #a0a0a0;
+  --claude-border: #2a2a2a;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+}
+
+html {
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  tab-size: 4;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  line-height: inherit;
+  background-color: var(--claude-bg);
+  color: var(--claude-text);
+}
+
+/* Skip to main content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.sr-only:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 1rem;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* Loading state */
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+

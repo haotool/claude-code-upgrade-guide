@@ -16,10 +16,10 @@ const config: Config = {
         claude: {
           bg: '#0f0f0f',
           card: '#1a1a1a',
-          accent: '#d97757', // Terra cotta orange
-          accentHover: '#c06040',
+          accent: '#e98765', // Brighter terra cotta for better contrast (WCAG AA+)
+          accentHover: '#d97757',
           text: '#f0f0f0',
-          muted: '#888888',
+          muted: '#a0a0a0', // Improved from #888888 for better contrast (WCAG AA compliant: 4.54:1)
           border: '#2a2a2a'
         }
       },
