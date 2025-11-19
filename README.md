@@ -4,7 +4,7 @@
   <h3>Claude Code 原生版升級懶人包</h3>
   <p>一鍵複製指令，無痛升級至原生版 Claude Code</p>
   <p>
-    <a href="https://claude-code-upgrade.vercel.app">🌐 Live Demo</a> •
+    <a href="https://claude-code-upgrade-guide.vercel.app">🌐 Live Demo</a> •
     <a href="#features">✨ Features</a> •
     <a href="#tech-stack">🛠️ Tech Stack</a> •
     <a href="#deployment">🚀 Deployment</a>
@@ -17,7 +17,7 @@
 
 專為開發者設計的 Claude Code 原生版升級指南網站。提供一鍵複製指令功能，輕鬆解除舊版依賴，快速安裝 macOS, Linux, Windows 原生版本。
 
-**Live Site**: [https://claude-code-upgrade.vercel.app](https://claude-code-upgrade.vercel.app)
+**Live Site**: [https://claude-code-upgrade-guide.vercel.app](https://claude-code-upgrade-guide.vercel.app)
 
 ## ✨ Features
 
@@ -132,7 +132,7 @@ MIT License - feel free to use this project for your own purposes.
 
 **Haotool** (azlife_1224)
 - Threads: [@azlife_1224](https://www.threads.net/@azlife_1224)
-- Website: [claude-code-upgrade.vercel.app](https://claude-code-upgrade.vercel.app)
+- Website: [claude-code-upgrade-guide.vercel.app](https://claude-code-upgrade-guide.vercel.app)
 
 ## 🙏 Acknowledgments
 

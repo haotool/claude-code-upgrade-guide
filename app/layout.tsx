@@ -25,7 +25,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://claude-code-upgrade.vercel.app'),
+  metadataBase: new URL('https://claude-code-upgrade-guide.vercel.app'),
   title: "Claude Code 原生版升級懶人包 | Haotool 出品",
   description: "專為開發者設計的 Claude Code 原生版升級指南。一鍵複製指令，無痛解除舊版依賴，快速安裝 macOS, Linux, Windows 原生版本。",
   keywords: ["Claude Code", "Anthropic", "Native Upgrade", "Lazy Pack", "Developer Tools", "懶人包", "升級指南", "Haotool", "Claude Code 好工具", "Next.js Template"],
@@ -42,13 +42,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Claude Code 原生版升級懶人包",
     description: "一鍵複製指令，無痛升級至原生版 Claude Code。支援 macOS, Linux, Windows。",
-    url: "https://claude-code-upgrade.vercel.app",
+    url: "https://claude-code-upgrade-guide.vercel.app",
     siteName: "Claude Code Upgrade Guide",
     locale: "zh_TW",
     type: "website",
     images: [
       {
-        url: "https://claude-code-upgrade.vercel.app/og-image.png",
+        url: "https://claude-code-upgrade-guide.vercel.app/og-image.png",
         width: 1200,
         height: 630,
         alt: "Claude Code Native Upgrade Lazy Pack",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Claude Code 原生版升級懶人包 | Haotool 出品",
     description: "開發者必備：Claude Code 無 Node.js 依賴版本快速安裝指南。",
-    images: ["https://claude-code-upgrade.vercel.app/og-image.png"],
+    images: ["https://claude-code-upgrade-guide.vercel.app/og-image.png"],
     creator: "@azlife_1224",
   },
   robots: {

@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://claude-code-upgrade.vercel.app';
+  const baseUrl = 'https://claude-code-upgrade-guide.vercel.app';
   const currentDate = new Date().toISOString();
 
   return [

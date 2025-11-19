@@ -14,8 +14,8 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/'],
       },
     ],
-    sitemap: 'https://claude-code-upgrade.vercel.app/sitemap.xml',
-    host: 'https://claude-code-upgrade.vercel.app',
+    sitemap: 'https://claude-code-upgrade-guide.vercel.app/sitemap.xml',
+    host: 'https://claude-code-upgrade-guide.vercel.app',
   };
 }
 

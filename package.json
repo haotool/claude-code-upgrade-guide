@@ -8,7 +8,7 @@
     "type": "git",
     "url": "https://github.com/haotool/claude-code-upgrade-guide.git"
   },
-  "homepage": "https://claude-code-upgrade.vercel.app",
+  "homepage": "https://claude-code-upgrade-guide.vercel.app",
   "keywords": [
     "claude-code",
     "anthropic",
