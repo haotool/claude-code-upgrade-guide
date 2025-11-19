@@ -30,6 +30,9 @@ export const metadata: Metadata = {
   description: "專為開發者設計的 Claude Code 原生版升級指南。一鍵複製指令，無痛解除舊版依賴，快速安裝 macOS, Linux, Windows 原生版本。",
   keywords: ["Claude Code", "Anthropic", "Native Upgrade", "Lazy Pack", "Developer Tools", "懶人包", "升級指南", "Haotool", "Claude Code 好工具", "Next.js Template"],
   authors: [{ name: "azlife_1224" }],
+  verification: {
+    google: "zsmN7DF_-zxLnHMyGLsf5TO6ldn5hjdkmdzec7unZeg",
+  },
   icons: {
     icon: [
       { url: '/favicon.svg', type: 'image/svg+xml' },
