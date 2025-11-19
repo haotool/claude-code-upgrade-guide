@@ -2,6 +2,7 @@
 import type { Metadata, Viewport } from "next";
 import { Outfit, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { WebsiteSchema, OrganizationSchema } from "./schema";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -28,7 +29,24 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://claude-code-upgrade-guide.vercel.app'),
   title: "Claude Code 原生版升級懶人包 | Haotool 出品",
   description: "專為開發者設計的 Claude Code 原生版升級指南。一鍵複製指令，無痛解除舊版依賴，快速安裝 macOS, Linux, Windows 原生版本。",
-  keywords: ["Claude Code", "Anthropic", "Native Upgrade", "Lazy Pack", "Developer Tools", "懶人包", "升級指南", "Haotool", "Claude Code 好工具", "Next.js Template"],
+  keywords: [
+    "Claude Code",
+    "Claude Code 好工具",
+    "CC 好工具",
+    "Claude Code 原生版",
+    "Claude Code 升級",
+    "Claude Code 安裝",
+    "Anthropic",
+    "Native Upgrade",
+    "Lazy Pack",
+    "Developer Tools",
+    "懶人包",
+    "升級指南",
+    "Haotool",
+    "azlife_1224",
+    "開發者工具",
+    "程式設計工具"
+  ],
   authors: [{ name: "azlife_1224" }],
   verification: {
     google: "zsmN7DF_-zxLnHMyGLsf5TO6ldn5hjdkmdzec7unZeg",
@@ -86,10 +104,12 @@ export default function RootLayout({
   return (
     <html lang="zh-TW" className="dark">
       <body
-        className={`${outfit.variable} ${jetbrainsMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+      className={`${outfit.variable} ${jetbrainsMono.variable} antialiased`}
+    >
+      <WebsiteSchema />
+      <OrganizationSchema />
+      {children}
+    </body>
     </html>
   );
 }

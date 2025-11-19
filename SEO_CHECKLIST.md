@@ -3,14 +3,16 @@
 ## ✅ 已完成的 SEO 配置
 
 ### 1. 基礎 SEO Meta Tags
+
 - ✅ `<title>` - Claude Code 原生版升級懶人包 | Haotool 出品
 - ✅ `<meta name="description">` - 完整產品描述
 - ✅ `<meta name="keywords">` - 相關關鍵字
 - ✅ `<meta name="author">` - azlife_1224
 - ✅ `<meta name="robots">` - index, follow
-- ✅ **Google Site Verification** - zsmN7DF_-zxLnHMyGLsf5TO6ldn5hjdkmdzec7unZeg
+- ✅ **Google Site Verification** - zsmN7DF\_-zxLnHMyGLsf5TO6ldn5hjdkmdzec7unZeg
 
 ### 2. Open Graph (社交媒體)
+
 - ✅ `og:title` - 網站標題
 - ✅ `og:description` - 網站描述
 - ✅ `og:url` - https://claude-code-upgrade-guide.vercel.app
@@ -22,6 +24,7 @@
 - ✅ `og:locale` - zh_TW
 
 ### 3. Twitter Card
+
 - ✅ `twitter:card` - summary_large_image
 - ✅ `twitter:title` - 完整標題
 - ✅ `twitter:description` - 完整描述
@@ -29,6 +32,7 @@
 - ✅ `twitter:creator` - @azlife_1224
 
 ### 4. 技術 SEO
+
 - ✅ **Sitemap** - `/sitemap.xml` (動態生成)
 - ✅ **Robots.txt** - `/robots.txt` (動態生成)
 - ✅ **Favicon** - SVG 格式 (可縮放)
@@ -37,6 +41,7 @@
 - ✅ **Accessibility** - ARIA labels
 
 ### 5. 效能優化
+
 - ✅ **圖片優化** - OG image 僅 61KB
 - ✅ **字體優化** - Google Fonts with preload
 - ✅ **程式碼分割** - Next.js 自動優化
@@ -47,9 +52,11 @@
 ## 🔄 建議進一步實作的 SEO 步驟
 
 ### 1. Google Search Console 設定（高優先級）
+
 **狀態**: 🟡 待完成
 
 **步驟**:
+
 1. 前往 [Google Search Console](https://search.google.com/search-console)
 2. 新增資源: `https://claude-code-upgrade-guide.vercel.app`
 3. 驗證擁有權（使用已添加的 verification meta tag）
@@ -63,9 +70,11 @@
 ---
 
 ### 2. 結構化資料 (Schema.org)（中優先級）
+
 **狀態**: 🔴 未實作
 
 **建議實作**:
+
 ```json
 {
   "@context": "https://schema.org",
@@ -101,26 +110,42 @@
 ---
 
 ### 3. 多語言 SEO (hreflang)（低優先級）
+
 **狀態**: 🔴 未實作
 
 **建議**:
 目前網站支援繁體中文和英文切換，但沒有獨立的語言頁面。
 
 **選項 A**: 維持現狀（單頁面雙語切換）
+
 - 優點: 簡單，無需額外配置
 - 缺點: SEO 效果較差
 
 **選項 B**: 實作獨立語言路徑
+
 ```
 /zh-TW/  (繁體中文)
 /en/     (英文)
 ```
 
 **hreflang 標籤**:
+
 ```html
-<link rel="alternate" hreflang="zh-TW" href="https://claude-code-upgrade-guide.vercel.app/zh-TW/" />
-<link rel="alternate" hreflang="en" href="https://claude-code-upgrade-guide.vercel.app/en/" />
-<link rel="alternate" hreflang="x-default" href="https://claude-code-upgrade-guide.vercel.app/" />
+<link
+  rel="alternate"
+  hreflang="zh-TW"
+  href="https://claude-code-upgrade-guide.vercel.app/zh-TW/"
+/>
+<link
+  rel="alternate"
+  hreflang="en"
+  href="https://claude-code-upgrade-guide.vercel.app/en/"
+/>
+<link
+  rel="alternate"
+  hreflang="x-default"
+  href="https://claude-code-upgrade-guide.vercel.app/"
+/>
 ```
 
 **預期時間**: 2-3 小時
@@ -129,14 +154,18 @@
 ---
 
 ### 4. 內容優化（高優先級）
+
 **狀態**: 🟡 可改進
 
 **建議**:
+
 1. **增加內容豐富度**
+
    - 目前: 主要是指令列表
    - 建議: 新增說明文字、FAQ、常見問題
 
 2. **關鍵字優化**
+
    - 主要關鍵字: "Claude Code", "原生版", "升級"
    - 長尾關鍵字: "Claude Code 如何升級", "Claude Code 移除 Node.js", "Claude Code 原生版安裝"
 
@@ -150,14 +179,18 @@
 ---
 
 ### 5. 外部連結建設（中優先級）
+
 **狀態**: 🔴 未實作
 
 **建議行動**:
+
 1. **社交媒體分享**
+
    - ✅ Threads: @azlife_1224 (已有)
    - 建議: Twitter/X, LinkedIn, Reddit
 
 2. **開發者社群**
+
    - GitHub README 中的連結
    - Dev.to / Medium 文章
    - Product Hunt 發布
@@ -173,14 +206,18 @@
 ---
 
 ### 6. 效能監控與優化（中優先級）
+
 **狀態**: 🟡 可改進
 
 **建議工具**:
+
 1. **Google PageSpeed Insights**
+
    - URL: https://pagespeed.web.dev/
    - 目標: 所有指標 > 90
 
 2. **Core Web Vitals**
+
    - LCP (Largest Contentful Paint): < 2.5s
    - FID (First Input Delay): < 100ms
    - CLS (Cumulative Layout Shift): < 0.1
@@ -195,11 +232,13 @@
 ---
 
 ### 7. Analytics 整合（高優先級）
+
 **狀態**: 🔴 未實作
 
 **建議實作**:
 
 #### Google Analytics 4 (GA4)
+
 ```typescript
 // app/layout.tsx
 <Script
@@ -217,6 +256,7 @@
 ```
 
 #### 追蹤目標
+
 - 頁面瀏覽
 - 指令複製次數
 - 語言切換次數
@@ -228,6 +268,7 @@
 ---
 
 ### 8. 本地 SEO（低優先級）
+
 **狀態**: 🔴 未實作
 
 **建議**:
@@ -251,9 +292,11 @@
 ---
 
 ### 9. 安全性 SEO（高優先級）
+
 **狀態**: ✅ 已完成
 
 **檢查清單**:
+
 - ✅ HTTPS (Vercel 自動提供)
 - ✅ Security Headers (Vercel 預設)
 - ✅ 無混合內容 (Mixed Content)
@@ -262,15 +305,19 @@
 ---
 
 ### 10. 持續監控與改進（持續進行）
+
 **狀態**: 🟡 待建立
 
 **建議工具**:
+
 1. **Ahrefs / SEMrush** (付費)
+
    - 關鍵字排名追蹤
    - 競爭對手分析
    - 外部連結監控
 
 2. **Google Search Console** (免費)
+
    - 搜尋查詢報告
    - 點擊率 (CTR)
    - 索引涵蓋率
@@ -288,21 +335,25 @@
 ## 📊 SEO 優先級總結
 
 ### 立即執行（今天）
+
 1. ✅ Google Site Verification (已完成)
 2. 🔄 Google Search Console 設定
 3. 🔄 提交 Sitemap
 
 ### 本週執行
+
 1. Google Analytics 4 整合
 2. 結構化資料 (Schema.org) 實作
 3. PageSpeed Insights 優化
 
 ### 本月執行
+
 1. 內容優化 (新增 FAQ, 詳細說明)
 2. 社交媒體推廣
 3. 開發者社群分享
 
 ### 持續進行
+
 1. 外部連結建設
 2. 效能監控
 3. 搜尋排名追蹤
@@ -312,16 +363,19 @@
 ## 🎯 預期 SEO 成果
 
 ### 短期目標 (1-2 週)
+
 - ✅ 網站被 Google 索引
 - ✅ 出現在品牌搜尋結果 ("Haotool")
 - ✅ 社交媒體預覽正確顯示
 
 ### 中期目標 (1-3 個月)
+
 - 🎯 出現在 "Claude Code 升級" 搜尋結果第一頁
 - 🎯 有機流量達到 100+ 月訪問
 - 🎯 核心 Web Vitals 全綠
 
 ### 長期目標 (3-6 個月)
+
 - 🎯 主要關鍵字排名前 3
 - 🎯 有機流量達到 500+ 月訪問
 - 🎯 成為 Claude Code 社群推薦資源
@@ -339,4 +393,3 @@
 
 **最後更新**: 2024-11-20
 **維護者**: azlife_1224
-

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 import { Language } from "@/lib/types";
 
