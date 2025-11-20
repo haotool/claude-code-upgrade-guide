@@ -126,7 +126,7 @@ export default function RootLayout({
           跳至主要內容
         </a>
         <main id="main-content" role="main">
-          {children}
+        {children}
         </main>
       </body>
     </html>
